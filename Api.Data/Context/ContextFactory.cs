@@ -9,10 +9,10 @@ namespace Api.Data.Context
         public ContextApi CreateDbContext(string[] args)
         {
             //Usado para criar migrations em tempo de projeto
-            var connectionString = Environment.GetEnvironmentVariable("ConnectionString");
+            var connectionString = "Server=127.0.0.1,1433;Database=PrimeAPI;user id=SA;Password=Root@123root";
             return new ContextApi(
                 new DbContextOptionsBuilder<ContextApi>()
-                .UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)).Options);
+                .UseSqlServer(connectionString).Options);
         }
     }
 }
