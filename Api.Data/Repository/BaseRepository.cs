@@ -4,8 +4,6 @@ using Api.Domain.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Api.Data.Repository
@@ -20,9 +18,24 @@ namespace Api.Data.Repository
             _dataset = _context.Set<T>();
         }
 
-        public Task<bool> DeleteAsync(Guid id)
+        public async Task<bool> DeleteAsync(Guid id)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var result = await _dataset.SingleOrDefaultAsync(x => x.Id.Equals(id));
+                if (result == null)
+                    return false;
+
+                _dataset.Remove(result);
+                
+                await _context.SaveChangesAsync();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+            return true;
         }
 
         public async Task<T> InsertAsync(T item)
@@ -60,7 +73,7 @@ namespace Api.Data.Repository
         {
             try
             {
-                var result = await _dataset.SingleOrDefaultAsync(x => x.Id == item.Id);
+                var result = await _dataset.SingleOrDefaultAsync(x => x.Id.Equals(item.Id));
                 if (result == null)
                     return null;
 
