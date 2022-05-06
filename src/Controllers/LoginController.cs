@@ -1,7 +1,5 @@
 ﻿using Api.Domain.Dtos;
-using Api.Domain.Entities;
 using Api.Domain.Interfaces.Services.User;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Net;
