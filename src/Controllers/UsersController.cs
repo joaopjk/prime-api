@@ -1,4 +1,5 @@
 ﻿
+using Api.Domain.Entities;
 using Api.Domain.Interfaces.Services.User;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -34,7 +35,7 @@ namespace prime_api.Controllers
             }
         }
 
-        [HttpGet("GetWithId/{id}")]
+        [HttpGet("GetWithId/{id}", Name = "GetWithId")]
         public async Task<IActionResult> Get(Guid id)
         {
             if (!ModelState.IsValid)
@@ -43,6 +44,27 @@ namespace prime_api.Controllers
             try
             {
                 return Ok(await _userService.Get(id));
+            }
+            catch (ArgumentException e)
+            {
+                return StatusCode((int)HttpStatusCode.InternalServerError, e.Message);
+            }
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Post([FromBody] UserEntity user)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            try
+            {
+                var result = await _userService.Post(user);
+                if (result != null)
+                    return Created(new Uri(Url.Link("GetWithId", new { id = result.Id })), result);
+                else
+                    return BadRequest();
             }
             catch (ArgumentException e)
             {
