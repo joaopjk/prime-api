@@ -21,6 +21,7 @@ namespace prime_api
         {
 
             services.AddControllers();
+            services.ConfigureContextInjection();
             services.ConfigureDependecyInjection();
             services.ConfigureDependecyRepository();
             services.AddSwaggerGen(c =>
