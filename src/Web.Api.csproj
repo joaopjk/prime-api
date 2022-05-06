@@ -10,7 +10,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
+    <ProjectReference Include="..\Api.CrossCutting\Api.CrossCutting.csproj" />
+    <ProjectReference Include="..\Domain\Api.Domain.csproj" />
   </ItemGroup>
 
 </Project>
