@@ -34,7 +34,7 @@ namespace prime_api.Controllers
             }
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("GetWithId/{id}")]
         public async Task<IActionResult> Get(Guid id)
         {
             if (!ModelState.IsValid)
