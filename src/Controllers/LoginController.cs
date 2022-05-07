@@ -1,5 +1,6 @@
 ﻿using Api.Domain.Dtos;
 using Api.Domain.Interfaces.Services.User;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Net;
@@ -18,6 +19,7 @@ namespace prime_api.Controllers
             _service = service;
         }
 
+        [AllowAnonymous]
         [HttpPost]
         public async Task<object> Login([FromBody] LoginDto user)
         {

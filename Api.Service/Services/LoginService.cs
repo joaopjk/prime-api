@@ -60,7 +60,11 @@ namespace Api.Service.Services
                 }
             }
             else
-                return null;
+                return new
+                {
+                    authenticated = false,
+                    message = "Falha ao autenticar !"
+                };
         }
 
         private string CreateToken(ClaimsIdentity identity,

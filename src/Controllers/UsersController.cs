@@ -1,6 +1,7 @@
 ﻿
 using Api.Domain.Entities;
 using Api.Domain.Interfaces.Services.User;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Net;
@@ -35,6 +36,7 @@ namespace prime_api.Controllers
             }
         }
 
+        [Authorize("Bearer")]
         [HttpGet("GetWithId/{id}", Name = "GetWithId")]
         public async Task<IActionResult> Get(Guid id)
         {
