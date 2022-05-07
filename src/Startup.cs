@@ -24,6 +24,7 @@ namespace prime_api
             services.ConfigureContextInjection();
             services.ConfigureDependecyInjection();
             services.ConfigureDependecyRepository();
+            services.ConfigureJWTInjection();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "prime_api", Version = "v1" });

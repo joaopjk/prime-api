@@ -25,7 +25,10 @@
       "applicationUrl": "https://localhost:5001;http://localhost:5000",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
-        "SQL_SERVER": "Server=127.0.0.1,1433;Database=PrimeAPI;user id=SA;Password=Root@123root"
+        "SQL_SERVER": "Server=127.0.0.1,1433;Database=PrimeAPI;user id=SA;Password=Root@123root",
+        "Audience": "ExemploAudience",
+        "Issuer": "ExemploIssuer",
+        "Seconds": "12000"
       }
     }
   }
