@@ -36,13 +36,13 @@ namespace Api.Service.Services
             return _mapper.Map<IEnumerable<UserDto>>(await _repository.SelectAsync());
         }
 
-        public async Task<UserDtoCreateResult> Post(UserDto user)
+        public async Task<UserDtoCreateResult> Post(UserDtoCreate user)
         {
             var userEntity = _mapper.Map<UserEntity>(_mapper.Map<UserModel>(user));
             return _mapper.Map<UserDtoCreateResult>(await _repository.InsertAsync(userEntity));
         }
 
-        public async Task<UserDtoUpdateResult> Put(UserDto user)
+        public async Task<UserDtoUpdateResult> Put(UserDtoUpdate user)
         {
             var userEntity = _mapper.Map<UserEntity>(_mapper.Map<UserModel>(user));
             return _mapper.Map<UserDtoUpdateResult>(await _repository.UpdateAsync(userEntity));

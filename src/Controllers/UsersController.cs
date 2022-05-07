@@ -1,7 +1,6 @@
 ﻿
-using Api.Domain.Entities;
+using Api.Domain.Dtos.User;
 using Api.Domain.Interfaces.Services.User;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Net;
@@ -36,7 +35,7 @@ namespace prime_api.Controllers
             }
         }
 
-        [Authorize("Bearer")]
+        //[Authorize("Bearer")]
         [HttpGet("GetWithId/{id}", Name = "GetWithId")]
         public async Task<IActionResult> Get(Guid id)
         {
@@ -54,7 +53,7 @@ namespace prime_api.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Post([FromBody] UserEntity user)
+        public async Task<IActionResult> Post([FromBody] UserDtoCreate user)
         {
             if (!ModelState.IsValid)
             {
@@ -75,7 +74,7 @@ namespace prime_api.Controllers
         }
 
         [HttpPut]
-        public async Task<IActionResult> Put([FromBody] UserEntity user)
+        public async Task<IActionResult> Put([FromBody] UserDtoUpdate user)
         {
             if (!ModelState.IsValid)
             {

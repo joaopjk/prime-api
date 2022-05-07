@@ -1,5 +1,4 @@
 using Api.CrossCutting.DependencyInjection;
-using Api.Domain.Security;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -28,6 +27,7 @@ namespace prime_api
             services.ConfigureDependecyInjection();
             services.ConfigureDependecyRepository();
             services.ConfigureJWTInjection();
+            services.ConfigureMappingInjection();
 
             services.AddSwaggerGen(c =>
             {
