@@ -24,7 +24,7 @@ namespace Api.Service.Test.Usuario
             Assert.Equal(NomeUsuario, result.Name);
 
             _serviceMock = new Mock<IUserService>();
-            _serviceMock.Setup(x => x.Get(It.IsAny<Guid>())).Returns(Task.FromResult((UserDto) null));
+            _serviceMock.Setup(x => x.Get(It.IsAny<Guid>())).Returns(Task.FromResult((UserDto)null));
             _service = _serviceMock.Object;
             var _record = await _service.Get(IdUsuario);
             Assert.Null(_record);

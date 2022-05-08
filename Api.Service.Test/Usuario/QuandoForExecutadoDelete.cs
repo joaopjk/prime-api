@@ -1,15 +1,12 @@
 ﻿using Api.Domain.Interfaces.Services.User;
 using Moq;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Xunit;
 
 namespace Api.Service.Test.Usuario
 {
-    public class QuandoForExecutadoDelete: UsuariosTests
+    public class QuandoForExecutadoDelete : UsuariosTests
     {
         private IUserService _service;
         private Mock<IUserService> _serviceMock;
