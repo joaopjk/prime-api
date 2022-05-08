@@ -7,10 +7,7 @@ namespace Api.Data.Test
 {
     public abstract class BaseTest
     {
-        public BaseTest()
-        {
-
-        }
+        public BaseTest() { }
     }
 
     public class DbTest : IDisposable
