@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.1.32421.90
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32228.343
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Web.Api", "Web.Api.csproj", "{BCA5CE72-02ED-43A4-A1D8-8FDB810EB5F0}"
 EndProject
@@ -17,7 +17,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{9F9FB1EB
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api.Data.Test", "..\Api.Data.Test\Api.Data.Test.csproj", "{CF0D4BF7-24E2-4008-8B65-B87BA852FE88}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api.Service.Test", "..\Api.Service.Test\Api.Service.Test.csproj", "{73B3D470-3946-4417-B45C-A37A63FA0553}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api.Service.Test", "..\Api.Service.Test\Api.Service.Test.csproj", "{73B3D470-3946-4417-B45C-A37A63FA0553}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web.Api.Test", "..\Web.Api.Test\Web.Api.Test.csproj", "{97B04C13-D01B-4635-A1B0-776C4D7BEB9A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,6 +55,10 @@ Global
 		{73B3D470-3946-4417-B45C-A37A63FA0553}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{73B3D470-3946-4417-B45C-A37A63FA0553}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{73B3D470-3946-4417-B45C-A37A63FA0553}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97B04C13-D01B-4635-A1B0-776C4D7BEB9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97B04C13-D01B-4635-A1B0-776C4D7BEB9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97B04C13-D01B-4635-A1B0-776C4D7BEB9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97B04C13-D01B-4635-A1B0-776C4D7BEB9A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -60,6 +66,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{CF0D4BF7-24E2-4008-8B65-B87BA852FE88} = {9F9FB1EB-8AD2-488D-8FDC-562A26206896}
 		{73B3D470-3946-4417-B45C-A37A63FA0553} = {9F9FB1EB-8AD2-488D-8FDC-562A26206896}
+		{97B04C13-D01B-4635-A1B0-776C4D7BEB9A} = {9F9FB1EB-8AD2-488D-8FDC-562A26206896}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F36CCAD6-E22C-4D0B-81FE-B1492E2CAE32}
