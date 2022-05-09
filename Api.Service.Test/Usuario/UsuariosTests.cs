@@ -55,7 +55,7 @@ namespace Api.Service.Test.Usuario
                 Id = IdUsuario,
                 Name = NomeUsuario,
                 Email = EmailUsuario,
-                CreatedAt = DateTime.UtcNow,
+                CreateAt = DateTime.UtcNow,
             };
 
             userDtoUpdate = new UserDtoUpdate()
