@@ -8,16 +8,21 @@ namespace Api.CrossCutting.DependencyInjection
     {
         public static void ConfigureMappingInjection(this IServiceCollection service)
         {
-            var config = new AutoMapper.MapperConfiguration(x =>
+            MapperConfiguration config = MapperConfigure();
+
+            IMapper mapper = config.CreateMapper();
+
+            service.AddSingleton(mapper);
+        }
+
+        public static MapperConfiguration MapperConfigure()
+        {
+            return new AutoMapper.MapperConfiguration(x =>
             {
                 x.AddProfile(new DtoToModelProfile());
                 x.AddProfile(new EntityToDtoProfile());
                 x.AddProfile(new ModelToEntityProfile());
             });
-
-            IMapper mapper = config.CreateMapper();
-
-            service.AddSingleton(mapper);
         }
     }
 }
