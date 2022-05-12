@@ -15,7 +15,7 @@ using System.Threading.Tasks;
 
 namespace Api.Integration.Test
 {
-    public class BaseIntegration : IDisposable
+    public abstract class BaseIntegration : IDisposable
     {
         public ContextApi context { get; private set; }
         public HttpClient client { get; private set; }
