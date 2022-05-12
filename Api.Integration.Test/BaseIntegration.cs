@@ -9,6 +9,7 @@ using Newtonsoft.Json;
 using prime_api;
 using System;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -23,7 +24,7 @@ namespace Api.Integration.Test
         public HttpResponseMessage response { get; set; }
         public BaseIntegration()
         {
-            hostApi = "http://localhost:5000/api";
+            hostApi = "http://localhost:5050/api";
             var builder = new WebHostBuilder()
                 .UseEnvironment("Testing")
                 .UseStartup<Startup>();
@@ -46,6 +47,11 @@ namespace Api.Integration.Test
             {
                 Email = "teste@mail.com"
             };
+
+            var resultLogin = await PostJsonAsync(loginDto, $"{hostApi}login", client);
+            var loginObject = JsonConvert.DeserializeObject<LoginResponseDto>(await resultLogin.Content.ReadAsStringAsync());
+
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", loginObject.accessToken);
         }
 
         public static async Task<HttpResponseMessage> PostJsonAsync(object dataclass, string url, HttpClient client)
