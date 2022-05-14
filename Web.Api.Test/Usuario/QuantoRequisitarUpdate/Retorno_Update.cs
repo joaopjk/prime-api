@@ -4,9 +4,6 @@ using Microsoft.AspNetCore.Mvc;
 using Moq;
 using prime_api.Controllers;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Xunit;
 
@@ -45,7 +42,7 @@ namespace Web.Api.Test.Usuario.QuantoRequisitarUpdate
             var result = await _controller.Put(userDtoUpdate);
             Assert.True(result is OkObjectResult);
 
-            var resultValue = ((OkObjectResult)result).Value as UserDtoCreateResult;
+            var resultValue = ((OkObjectResult)result).Value as UserDtoUpdateResult;
             Assert.NotNull(resultValue);
             Assert.Equal(userDtoUpdate.Name, resultValue.Name);
             Assert.Equal(userDtoUpdate.Email, resultValue.Email);

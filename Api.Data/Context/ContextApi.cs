@@ -1,9 +1,11 @@
 ﻿using Api.Data.Mapping;
 using Api.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Api.Data.Context
 {
+    [ExcludeFromCodeCoverage]
     public class ContextApi : DbContext
     {
         public DbSet<UserEntity> Users { get; set; }

@@ -1,8 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Api.Data.Context
 {
+    [ExcludeFromCodeCoverage]
     public class ContextFactory : IDesignTimeDbContextFactory<ContextApi>
     {
         public ContextApi CreateDbContext(string[] args)

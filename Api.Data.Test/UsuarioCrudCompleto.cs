@@ -19,7 +19,6 @@ namespace Api.Data.Test
         }
 
         [Fact(DisplayName = "Crud de usuário.")]
-        [Trait("CRUD", "UserEntity")]
         public async Task E_possivel_CRUD_Usuario()
         {
             using (var context = _serviceProvider.GetService<ContextApi>())

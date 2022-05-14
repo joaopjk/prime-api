@@ -13,7 +13,7 @@ namespace Web.Api.Test.Usuario.QuandoRequisitarCreate
     {
         private UsersController _controller;
 
-        [Fact(DisplayName = "É possível realizar o Created.")]
+        [Fact(DisplayName = "Não é possível realizar o Created.")]
         public async Task Nao_e_possivel_invocar_a_controller_create()
         {
             var serviceMock = new Mock<IUserService>();
@@ -29,7 +29,7 @@ namespace Web.Api.Test.Usuario.QuandoRequisitarCreate
                     CreateAt = DateTime.UtcNow
                 });
             _controller = new UsersController(serviceMock.Object);
-            _controller.ModelState.AddModelError("Name","É um campo obrigatório.");
+            _controller.ModelState.AddModelError("Name", "É um campo obrigatório.");
             var url = new Mock<IUrlHelper>();
             url.Setup(x => x.Link(It.IsAny<string>(), It.IsAny<object>())).Returns("https://localhost:6666");
             _controller.Url = url.Object;

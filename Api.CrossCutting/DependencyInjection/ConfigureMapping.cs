@@ -17,7 +17,7 @@ namespace Api.CrossCutting.DependencyInjection
 
         public static MapperConfiguration MapperConfigure()
         {
-            return new AutoMapper.MapperConfiguration(x =>
+            return new MapperConfiguration(x =>
             {
                 x.AddProfile(new DtoToModelProfile());
                 x.AddProfile(new EntityToDtoProfile());

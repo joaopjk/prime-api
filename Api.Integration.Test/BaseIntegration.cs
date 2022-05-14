@@ -24,7 +24,7 @@ namespace Api.Integration.Test
         public HttpResponseMessage response { get; set; }
         public BaseIntegration()
         {
-            hostApi = "http://localhost:5050/api";
+            hostApi = "http://localhost:5050/api/";
             var builder = new WebHostBuilder()
                 .UseEnvironment("Testing")
                 .UseStartup<Startup>();
@@ -45,7 +45,7 @@ namespace Api.Integration.Test
         {
             var loginDto = new LoginDto()
             {
-                Email = "teste@mail.com"
+                Email = "joaopjk48@gmail.com"
             };
 
             var resultLogin = await PostJsonAsync(loginDto, $"{hostApi}login", client);

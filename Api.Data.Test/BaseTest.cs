@@ -2,9 +2,11 @@ using Api.Data.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using System;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Api.Data.Test
 {
+    [ExcludeFromCodeCoverage]
     public abstract class BaseTest
     {
         public BaseTest() { }
